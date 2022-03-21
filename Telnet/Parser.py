@@ -11,7 +11,11 @@ class Parser:
             if next_is_value:
                 next_is_value = False
                 cell, cgi, bsic, bcchno, *_ = Parser.__line_to_values(line)
-                result[cell] = {'CGI': cgi, 'BSIC': bsic, 'BCCHNO': bcchno}
+                _, _, lac, cid = cgi.split('-')
+                ncc = bsic[0]
+                bcc = bsic[1]
+                result[cell] = {'CID': cid, 'CGI': cgi, 'BSIC': bsic,
+                                'BCCHNO': bcchno, 'LAC': lac, 'NCC': ncc, 'BCC': ncc}
             if 'CELL     CGI' in line:
                 next_is_value = True
         command_name = 'RLDEP GSM'
