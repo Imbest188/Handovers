@@ -3,6 +3,7 @@ from threading import Thread
 from Telnet.Parser import Parser
 import datetime
 
+
 class EricssonBsc:
     def __init__(self, name, host, login, password):
         self.__ext_gsm_cells = dict()
@@ -78,4 +79,3 @@ class EricssonBsc:
 
     def get_utran_neighbour_relations(self) -> dict:
         return self.__utran_neighbour_relations
-
