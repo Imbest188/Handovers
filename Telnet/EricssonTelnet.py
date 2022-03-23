@@ -79,7 +79,7 @@ class EricssonTelnet:
             if 'Timeout' in channel_output or self.__retries_counter >= 10:
                 self.__retries_counter = 0
                 self.__heartbeat()
-            #self.__parse(channel_output)
+            # self.__parse(channel_output)
         except (ConnectionError, OSError, ConnectionResetError):
             self.__try_to_reconnect()
 
