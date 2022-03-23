@@ -30,14 +30,14 @@ class Table:
         for i in cells_records:
             cells_to_class.append(
                 Cell(LAC=cells_records[i]['LAC'], CellId=i, Downlink=cells_records[i]['Downlink'],
-                     Uplink=cells_records[i]['Uplink'], PCI=cells_records[i]['PSC']))
+                     Uplink=cells_records[i]['Uplink'], PSC=cells_records[i]['PSC']))
         return cells_to_class
 
 
 class Cell:
-    def __init__(self, LAC, CellId, Downlink, Uplink, PCI):
+    def __init__(self, LAC, CellId, Downlink, Uplink, PSC):
         self.LAC = LAC
         self.CellId = CellId
         self.Uplink = Uplink
         self.Downlink = Downlink
-        self.PCI = PCI
+        self.PSC = PSC
